@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Consulta 1: Estudiantes por Comuna</h2>
+<form method="POST">
+    <label for="comuna"> Ingrese nombre de la Comuna:</label>
+    <input type="text" name="comuna" id="comuna" required>
+    <button type="submit">Consultar</button>
+</form>
+{% if results %}
+<table>
+    <tr>
+        <th>Establecimiento</th>
+        <th>Tipo Dependencia</th>
+        <th>Cantidad Estudiantes</th>
+        <th>Edad Promedio</th>
+    </tr>
+    {% for row in results %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

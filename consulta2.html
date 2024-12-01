@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Consulta 2: Matrículas por Jornada</h2>
+<form method="POST">
+    <label for="nombre_establecimiento">Ingrese nombre del Establecimiento:</label>
+    <input type="text" name="nombre_establecimiento" id="nombre_establecimiento" required>
+    <button type="submit">Consultar</button>
+</form>
+{% if results %}
+<table>
+    <tr>
+        <th>Jornada</th>
+        <th>Cantidad Matrículas</th>
+    </tr>
+    {% for row in results %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

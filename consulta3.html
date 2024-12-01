@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Consulta 3: Estudiantes por Establecimiento</h2>
+<form method="POST">
+    <label for="nombre_establecimiento">Ingrese nombre del Establecimiento:</label>
+    <input type="text" name="nombre_establecimiento" id="nombre_establecimiento" required>
+    <button type="submit">Consultar</button>
+</form>
+{% if results %}
+<table>
+    <tr>
+        <th>MRUN</th>
+        <th>Comuna Alumno</th>
+        <th>Género Alumno</th>
+        <th>Nombre Establecimiento</th>
+    </tr>
+    {% for row in results %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

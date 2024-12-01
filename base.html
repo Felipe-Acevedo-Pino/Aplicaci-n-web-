@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="C:\Users\marce\Desktop\Base de Datos\templates\style.css">
+    <title>Aplicación Web para la Consulta de Datos de Matrícula Escolar en Chile
+    </title>
+</head>
+<body class="container">
+    <h1>Consulta de Datos de Matrícula Escolar (Chile)</h1>
+    <nav>
+        <ul>
+            <li><a href="/consulta1">Ranking de Establecimientos (Por comuna)</a></li>
+            <li><a href="/consulta2">Cantidad de personas por jornada (Por Establecimiento)  </a></li>
+            <li><a href="/consulta3">Estudiantes ordenados por género  (Por Establecimiento) </a></li>
+        </ul>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
+
